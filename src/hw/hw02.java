@@ -13,7 +13,7 @@ public class hw02 {
         int time=11;
         String data[]=new String[time];
         int x;
-        int t=1;
+        int t=0;
         while(time>10){
     	time=0;
         String n=scn.nextLine();
@@ -29,8 +29,24 @@ public class hw02 {
         for(int i=0;i<time;i++){
         	x=Integer.parseInt(data[i]);
         }
-       
-        		
-     
+      
+        		for(int i=0;i<time;i++){
+        			for(int j=i+1;j<time;j++){
+        		        	if(data[i].equals(data[j])){
+        		        		t++;
+        		        		if(t+1>time/2){
+        		        			System.out.println(data[i]);
+        		        			i=87;
+        		        			j=87;
+        		        		}
+        		            }
+        		        	if(j==time-1){
+        		        		t=0;
+        		        	}
+        		         }
+        		     }    
+        		if(t<time/2){
+        			System.out.println("NO");
+        		}
         }
 }
